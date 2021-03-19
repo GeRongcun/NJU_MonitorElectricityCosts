@@ -1,0 +1,2 @@
+# NJU_MonitorElectricityCosts
+利用Selenium库每隔5分钟爬取学校电费查询网站的数据，检测导师办公室电费使用情况，判断导师是否来学校。
