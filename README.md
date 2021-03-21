@@ -2,8 +2,7 @@
 
 利用Selenium库每隔5分钟爬取学校电费查询网站的数据，检测导师办公室电费使用情况，判断导师是否来学校。
 
-项目内容介绍：  
-
+项目文件介绍：  
 - README.md，本项目的说明资料；
 - README_attachments，README.md文件的附件；
 - chromedriver_v89.0.4389.23.exe，chromedriver安装包；
