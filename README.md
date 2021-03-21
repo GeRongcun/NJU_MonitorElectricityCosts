@@ -1,4 +1,4 @@
-## 摘要
+## 1. 摘要
 
 利用Selenium库每隔5分钟爬取学校电费查询网站的数据，检测导师办公室电费使用情况，判断导师是否来学校。
 
@@ -8,7 +8,7 @@
 - chromedriver_v89.0.4389.23.exe，chromedriver安装包；
 - 实时监测办公室电费.py，实现代码；
 
-## 思路
+## 2. 思路
 
 学校有个网址<http://172.27.2.95:8899/query/>(内网访问)可以查询电表余量，界面如下：
 
@@ -22,9 +22,9 @@
 
 PS：Selenium是一个用于测试网站的自动化测试工具，支持各种浏览器包括Chrome、Firefox、Safari等主流界面浏览器，同时也支持phantomJS无界面浏览器。
 
-## 代码实现
+## 3. 代码实现
 
-### selenium启动WebDriver
+### 3.1. selenium启动WebDriver
 
 ```python
 import time
@@ -44,8 +44,9 @@ driver = webdriver.Chrome(r"D:\00_OneDrive\学习笔记20200104\00Code\Python\Ch
 # driver = webdriver.Chrome(executable_path=r"D:\00_OneDrive\学习笔记20200104\00Code\Python\ChromeDriver\chromedriver_v88.0.4324.96.exe",options=options)
 ```
 
+### 3.2. 监测电费情况
+
 ```python
-# 监测570电费情况
 def getPowerNum570():
     sleepTime=10
     # 因为学校网站有点卡，所以，在进行一步网页操作后，需要等待一段时间，再进行下一步操作，我设置的等待时间是10s
@@ -84,7 +85,7 @@ def getPowerNum570():
     return nowTime,nowPowerNumber
 ```
 
-### 发送邮件
+### 3.3. 发送邮件
 
 ```python
 # 如果电费发生变化，就发送邮件到指定邮箱
@@ -127,7 +128,7 @@ def mail(message):
     return ret
 ```
 
-### main函数
+### 3.4. main函数
 
 ```python
 # 执行代码
@@ -155,13 +156,13 @@ if __name__ == '__main__':
     main()
 ```
 
-### 执行效果
+### 3.5. 执行效果
 
 ![代码执行情况](README_attachments/代码执行情况.png)
 
 ![代码执行情况](README_attachments/代码执行情况2.png)
 
-## 后话
+## 4. 后话
 
 学校电费查询网站一般在上午10点和晚上10点进行一次数据更新，更新频率较低。
 
